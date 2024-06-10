@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    # packages
+    'rest_framework',
+    'drf_yasg',
+        
     # custom app
     'restapp'
 ]
@@ -114,6 +118,20 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+# rest configure
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+SWAGGER_SETTINGS = {
+    
+    'VALIDATOR_URL': 'http://localhost:8000',
+    
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
